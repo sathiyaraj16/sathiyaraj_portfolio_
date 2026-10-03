@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sathiyaraj-portfolio</title>
+  <meta name="description" content="Portfolio of Sathiyaraj — 20-year-old Computer Science and Engineering student building real systems with AI, Python automation, SQL, and modern web technologies.">
+  <meta name="theme-color" content="#09090B">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sathiyaraj — Computer Science Student, Developer & AI Builder">
+  <meta property="og:description" content="Awwwards-grade developer portfolio for Sathiyaraj — Building with AI & Code.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2309090B'/><circle cx='50' cy='50' r='12' fill='%23FF5500'/></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Futuristic Technology HUD Cursor System -->
+  <canvas id="hud-trail-canvas" class="hud-trail-canvas" aria-hidden="true"></canvas>
+  <div class="hud-ambient-glow" id="hud-glow" aria-hidden="true"></div>
+  <div class="hud-cursor-dot" id="hud-dot" aria-hidden="true"></div>
+
+  <div class="hud-cursor-reticle" id="hud-reticle" aria-hidden="true">
+    <svg class="hud-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hudGlowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FF5500" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#FF5500" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hudRadarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FF5500" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#FF5500" stop-opacity="0.02"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Outer Subtle HUD Ring -->
+      <circle class="hud-ring-outer" cx="50" cy="50" r="44" stroke="rgba(255, 85, 0, 0.4)" stroke-width="1.2" />
+
+      <!-- Rotating Ring Segments (2-3 tiny segments) -->
+      <g class="hud-rotating-segments">
+        <circle cx="50" cy="50" r="44" stroke="#FF5500" stroke-width="1.8" stroke-dasharray="14 90" stroke-linecap="round" />
+        <circle cx="50" cy="50" r="44" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="8 96" stroke-dashoffset="45" stroke-linecap="round" />
+        <circle cx="50" cy="50" r="44" stroke="#FF5500" stroke-width="1.5" stroke-dasharray="10 94" stroke-dashoffset="85" stroke-linecap="round" />
+      </g>
+
+      <!-- Inner Precision Reticle Ring -->
+      <circle class="hud-ring-inner" cx="50" cy="50" r="28" stroke="rgba(255, 255, 255, 0.25)" stroke-width="0.8" stroke-dasharray="3 5" />
+
+      <!-- Precision Crosshairs -->
+      <line class="hud-crosshair" x1="50" y1="10" x2="50" y2="18" stroke="#FF5500" stroke-width="1.2" />
+      <line class="hud-crosshair" x1="50" y1="82" x2="50" y2="90" stroke="#FF5500" stroke-width="1.2" />
+      <line class="hud-crosshair" x1="10" y1="50" x2="18" y2="50" stroke="#FF5500" stroke-width="1.2" />
+      <line class="hud-crosshair" x1="82" y1="50" x2="90" y2="50" stroke="#FF5500" stroke-width="1.2" />
+
+      <!-- Corner Targeting Brackets -->
+      <g class="hud-brackets">
+        <path d="M22 30 L22 22 L30 22" stroke="#FF5500" stroke-width="1.5" fill="none" />
+        <path d="M78 30 L78 22 L70 22" stroke="#FF5500" stroke-width="1.5" fill="none" />
+        <path d="M22 70 L22 78 L30 78" stroke="#FF5500" stroke-width="1.5" fill="none" />
+        <path d="M78 70 L78 78 L70 78" stroke="#FF5500" stroke-width="1.5" fill="none" />
+      </g>
+
+      <!-- Rotating Radar Scanner Sweep -->
+      <path class="hud-radar-sweep" d="M50 50 L50 6 A44 44 0 0 1 85 24 Z" fill="url(#hudRadarGrad)" />
+    </svg>
+  </div>
+
+  <!-- Independent Floating Technical HUD Label Badge (Non-blocking & Offset) -->
+  <div class="hud-floating-tag" id="hud-label" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       FLOATING PILL NAVIGATION
+       ========================================================================== -->
+  <header class="floating-nav-bar" id="navbar">
+    <nav class="nav-pill-wrapper" aria-label="Main Navigation">
+      <a href="#hero" class="pill-logo hover-nav-trigger" aria-label="Sathiyaraj Home">
+        SATHIYARAJ<span class="orange-period">.</span>
+      </a>
+
+      <ul class="pill-links-list" role="menubar">
+        <li role="none"><a href="#hero" class="nav-link-item hover-nav-trigger active" role="menuitem">01 Home</a></li>
+        <li role="none"><a href="#about" class="nav-link-item hover-nav-trigger" role="menuitem">02 About</a></li>
+        <li role="none"><a href="#journey" class="nav-link-item hover-nav-trigger" role="menuitem">03 Journey</a></li>
+        <li role="none"><a href="#skills" class="nav-link-item hover-nav-trigger" role="menuitem">04 Skills</a></li>
+        <li role="none"><a href="#projects" class="nav-link-item hover-nav-trigger" role="menuitem">05 Projects</a></li>
+        <li role="none"><a href="#achievement" class="nav-link-item hover-nav-trigger" role="menuitem">06 Achievement</a></li>
+        <li role="none"><a href="#contact" class="nav-link-item hover-nav-trigger" role="menuitem">07 Contact</a></li>
+      </ul>
+
+      <button class="pill-mobile-toggle hover-nav-trigger" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation Curtain -->
+  <div class="mobile-nav-curtain" id="mobile-curtain" aria-hidden="true">
+    <button id="mobile-close-btn" aria-label="Close menu" style="position: absolute; top: 2rem; right: 2rem; background: transparent; border: none; color: #FFF; font-size: 2rem; cursor: pointer;">✕</button>
+    <a href="#hero" class="mobile-curtain-link">Home</a>
+    <a href="#about" class="mobile-curtain-link">About</a>
+    <a href="#journey" class="mobile-curtain-link">Journey</a>
+    <a href="#skills" class="mobile-curtain-link">Skills</a>
+    <a href="#projects" class="mobile-curtain-link">Projects</a>
+    <a href="#achievement" class="mobile-curtain-link">Achievement</a>
+    <a href="#contact" class="mobile-curtain-link">Contact</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         01 — BLACK HERO SECTION (DRAMATIC "WOW" MOMENT)
+         ========================================================================== -->
+    <section class="hero-black-section" id="hero">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="hero-fine-grid" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-layout-grid">
+          
+          <!-- Hero Left Statement -->
+          <div class="hero-copy-column">
+            <h1 class="hero-display-name hover-text-trigger">SATHIYARAJ</h1>
+            
+            <p class="hero-sub-statement hover-text-trigger">
+              Building with <span class="accent">AI &amp; Code.</span>
+            </p>
+
+            <p class="hero-lead-paragraph">
+              I'm a Computer Science student exploring AI, Python automation, SQL, and modern web creation.
+            </p>
+
+            <div class="hero-btn-cluster">
+              <a href="#projects" class="btn-hero-primary btn-magnetic hover-btn-trigger">
+                <span>EXPLORE MY WORK</span> <span class="btn-arrow">↗</span>
+              </a>
+              <a href="#about" class="btn-hero-secondary btn-magnetic hover-btn-trigger">
+                <span>ABOUT ME</span> <span class="btn-arrow">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right Professional Personal Image Section -->
+          <div class="hero-visual-column">
+            <div class="hero-portrait-stage hover-trigger" id="hero-portrait">
+              <!-- Subtle fine grid & ambient backlight glow -->
+              <div class="portrait-ambient-glow" aria-hidden="true"></div>
+              <div class="portrait-fine-grid-backing" aria-hidden="true"></div>
+
+              <!-- Main Portrait Card Frame -->
+              <div class="portrait-card-frame">
+                <!-- Asymmetric Technical Corner Accents -->
+                <div class="portrait-accent-corner top-left" aria-hidden="true"></div>
+                <div class="portrait-accent-corner bottom-right" aria-hidden="true"></div>
+
+                <div class="portrait-image-wrapper">
+                  <img src="assets/images/sathiyaraj.svg" alt="Sathiyaraj — Computer Science Student &amp; Developer" class="portrait-photo" id="portrait-photo" onerror="this.onerror=null; this.src='assets/images/sathiyaraj-fallback.svg';">
+                  <!-- Seamless Dark Gradient Fade at Base -->
+                  <div class="portrait-bottom-fade" aria-hidden="true"></div>
+                </div>
+
+                <!-- Minimal Technical Signature Tag -->
+                <div class="portrait-caption-tag">
+                  <span class="portrait-caption-name">SATHIYARAJ</span>
+                  <span class="portrait-caption-role">ENGINEERING &amp; AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#about" class="hero-scroll-link" aria-label="Scroll to About section">
+        SCROLL TO DISCOVER ↓
+      </a>
+    </section>
+
+    <!-- ==========================================================================
+         02 — WHITE ABOUT SECTION (EDITORIAL HIGH-CONTRAST)
+         ========================================================================== -->
+    <section class="about-white-section" id="about">
+      <div class="container">
+        <div class="about-editorial-grid">
+          
+          <!-- Manifesto Left -->
+          <div>
+            <div class="about-eyebrow">01 // PHILOSOPHY &amp; IDENTITY</div>
+            <h2 class="about-manifesto-title">
+              I LIKE TO BUILD THINGS THAT ACTUALLY WORK.
+            </h2>
+            <p class="about-lead-copy">
+              I'm a 20-year-old Computer Science and Engineering student at Roever Engineering College with an unrelenting appetite for technical experimentation. I don't just memorize algorithms for exams—I write code to automate tasks, connect intelligent models to real operating systems, and ship digital products.
+            </p>
+            <p class="about-secondary-copy">
+              Technology is evolving faster than traditional syllabi can keep up. My edge comes from self-directed curiosity: building my own voice assistant from scratch, engineering complex SQL database schemas, orchestrating Python automation scripts, and exploring the frontier of context engineering and AI tools.
+            </p>
+
+            <!-- Animated Interactive Keywords Wall -->
+            <div class="about-keywords-cluster">
+              <span class="keyword-badge hover-trigger">ARTIFICIAL INTELLIGENCE</span>
+              <span class="keyword-badge hover-trigger">PYTHON AUTOMATION</span>
+              <span class="keyword-badge hover-trigger">AI WEB CREATION</span>
+              <span class="keyword-badge hover-trigger">SQL ARCHITECTURE</span>
+              <span class="keyword-badge hover-trigger">CONTEXT ENGINEERING</span>
+              <span class="keyword-badge hover-trigger">VERSION CONTROL</span>
+              <span class="keyword-badge hover-trigger">AUTONOMOUS AGENTS</span>
+            </div>
+          </div>
+
+          <!-- Technical Snapshot Right -->
+          <div class="about-meta-card">
+            <div>
+              <div class="about-meta-item-lbl">DEVELOPER IDENTITY</div>
+              <div class="about-meta-item-val">Sathiyaraj</div>
+            </div>
+            <div>
+              <div class="about-meta-item-lbl">AGE &amp; DEMOGRAPHICS</div>
+              <div class="about-meta-item-val">20 Years Old • Perambalur, India</div>
+            </div>
+            <div>
+              <div class="about-meta-item-lbl">ACADEMIC DEGREE</div>
+              <div class="about-meta-item-val">B.E. Computer Science &amp; Engineering</div>
+            </div>
+            <div>
+              <div class="about-meta-item-lbl">INSTITUTE</div>
+              <div class="about-meta-item-val">Roever Engineering College</div>
+            </div>
+            <div>
+              <div class="about-meta-item-lbl">PRIMARY PARADIGM</div>
+              <div class="about-meta-item-val orange">AI-Augmented Software Engineering</div>
+            </div>
+            <div>
+              <div class="about-meta-item-lbl">CORE MINDSET</div>
+              <p style="font-size: 0.95rem; color: var(--text-light-secondary); line-height: 1.6; margin-top: 0.25rem;">
+                "Don't wait for permission or finished courses. Pick up the documentation, run the code, break it, fix it, and ship something functional."
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03 — LIGHT EDUCATION SECTION (MY JOURNEY TIMELINE)
+         ========================================================================== -->
+    <section class="education-light-section" id="journey">
+      <div class="container">
+        
+        <div>
+          <div class="about-eyebrow">02 // ACADEMIC FOUNDATION</div>
+          <h2 class="about-manifesto-title" style="margin-bottom: 1rem;">MY JOURNEY</h2>
+          <p style="font-size: 1.15rem; color: var(--text-light-muted); max-width: 640px;">
+            A progression of discipline, technical growth, and hands-on computer science training.
+          </p>
+        </div>
+
+        <div class="journey-timeline-stack">
+          
+          <!-- Stage 01: Engineering -->
+          <div class="journey-stage-row hover-trigger">
+            <div class="journey-stage-num">01</div>
+            <div>
+              <h3 class="journey-degree-title">B.E. Computer Science &amp; Engineering</h3>
+              <p class="journey-institution-name">Roever Engineering College, Perambalur</p>
+              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
+                Currently immersing in core computer science disciplines including data structures, relational database systems, operating system concepts, and modern artificial intelligence application design.
+              </p>
+            </div>
+            <div class="journey-status-tag" style="color: var(--accent-orange); border: 1px solid var(--accent-orange-border); background: var(--accent-orange-tint);">
+              PURSUING // CURRENT
+            </div>
+          </div>
+
+          <!-- Stage 02: HSC -->
+          <div class="journey-stage-row hover-trigger">
+            <div class="journey-stage-num">02</div>
+            <div>
+              <h3 class="journey-degree-title">Higher Secondary Certificate (HSC / 12th)</h3>
+              <p class="journey-institution-name">Government Higher Secondary School, VKM</p>
+              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
+                Focused on higher secondary sciences and mathematics, establishing foundational analytical reasoning and logical problem solving necessary for engineering.
+              </p>
+            </div>
+            <div class="journey-status-tag">
+              COMPLETED // MERIT
+            </div>
+          </div>
+
+          <!-- Stage 03: SSLC -->
+          <div class="journey-stage-row hover-trigger">
+            <div class="journey-stage-num">03</div>
+            <div>
+              <h3 class="journey-degree-title">Secondary School Leaving Certificate (SSLC)</h3>
+              <p class="journey-institution-name">Government Higher Secondary School, VKM</p>
+              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
+                Secondary school education with high academic standing, igniting early passion for computing, electronics, and logic systems.
+              </p>
+            </div>
+            <div class="journey-status-tag">
+              COMPLETED // FOUNDATION
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04 — WHITE SKILLS SECTION (INTERACTIVE SKILL WALL)
+         ========================================================================== -->
+    <section class="skills-interactive-section" id="skills">
+      <div class="container">
+        
+        <div>
+          <div class="about-eyebrow">03 // TECHNICAL TOOLKIT</div>
+          <h2 class="about-manifesto-title" style="margin-bottom: 1rem;">INTERACTIVE SKILL MATRIX</h2>
+          <p style="font-size: 1.15rem; color: var(--text-light-muted); max-width: 640px;">
+            Hover over any technical domain to inspect capabilities, applied implementations, and related toolsets.
+          </p>
+        </div>
+
+        <div class="skills-interactive-wall">
+          
+          <!-- Huge Interactive Skill Wall List -->
+          <div class="skill-huge-list" id="skill-list-container">
+            
+            <div class="skill-wall-item active hover-trigger" data-skill="ai">
+              <span>ARTIFICIAL INTELLIGENCE</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+            <div class="skill-wall-item hover-trigger" data-skill="python">
+              <span>PYTHON AUTOMATION</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+            <div class="skill-wall-item hover-trigger" data-skill="web">
+              <span>AI-ASSISTED WEB CREATION</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+            <div class="skill-wall-item hover-trigger" data-skill="sql">
+              <span>SQL &amp; RELATIONAL DATA</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+            <div class="skill-wall-item hover-trigger" data-skill="context">
+              <span>CONTEXT ENGINEERING</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+            <div class="skill-wall-item hover-trigger" data-skill="git">
+              <span>VERSION CONTROL &amp; GIT</span>
+              <span class="skill-arrow-indicator">→</span>
+            </div>
+
+          </div>
+
+          <!-- Sticky Detail Inspector Box -->
+          <div class="skill-detail-inspector" id="skill-inspector">
+            <div class="inspector-meta-tag" id="inspector-tag">SPECIALIZATION 01 // CORE FOCUS</div>
+            <h3 class="inspector-skill-title" id="inspector-title">ARTIFICIAL INTELLIGENCE</h3>
+            <p class="inspector-skill-desc" id="inspector-desc">
+              Harnessing modern Large Language Models, generative tool-calling, autonomous reasoning loops, and prompt chains to construct practical software agents and intelligent workflow augmentations.
+            </p>
+            <div class="inspector-tech-tags-list" id="inspector-tags-list">
+              <span class="tech-tag-chip">LLM APIs</span>
+              <span class="tech-tag-chip">Prompt Chaining</span>
+              <span class="tech-tag-chip">Function Calling</span>
+              <span class="tech-tag-chip">Speech Recognition</span>
+              <span class="tech-tag-chip">Autonomous Agents</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05 — BLACK PROJECT SHOWCASE (SELECTED WORK)
+         ========================================================================== -->
+    <section class="projects-black-section" id="projects">
+      <div class="container">
+        
+        <div>
+          <div class="about-eyebrow">04 // SELECTED WORK</div>
+          <h2 class="section-title">ENGINEERED WITH INTENT.</h2>
+          <p class="section-subtitle">Real experiments, working systems, and hands-on software development.</p>
+        </div>
+
+        <!-- Project 01: Hero Project - Personal AI Assistant -->
+        <div class="project-feature-card hover-ai-trigger" data-project="assistant">
+          <div class="project-copy-container">
+            <div class="project-serial-lbl">01 // FLAGSHIP</div>
+            <h3 class="project-card-heading">Autonomous Personal AI Assistant</h3>
+            <p class="project-card-desc">
+              Built a custom, voice-interactive personal AI assistant in Python that executes operating system commands, answers queries via integrated LLM models, and automates daily developer routines directly on the desktop.
+            </p>
+            <div class="project-tag-strip">
+              PYTHON // SPEECH RECOGNITION // LLM INTEGRATION // OS AUTOMATION
+            </div>
+            <a href="#achievement" class="project-action-link-btn hover-trigger">
+              EXPLORE CASE STUDY <span>↗</span>
+            </a>
+          </div>
+
+          <div class="project-card-visual-frame">
+            <div class="ui-mock-window">
+              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              </div>
+              <pre class="code-terminal-pre">
+<span style="color: #FF5500;">&gt;&gt;&gt;</span> <span style="color: #FFF;">assistant.listen()</span>
+[AUDIO] Captured voice input: <span style="color: #38BDF8;">"Open workspace and check DB status"</span>
+[PARSE] Dispatched command to OS engine
+[STATUS] Workspace launched • DB query executed: 0 latency
+[TTS] <span style="color: #4ADE80;">"Workspace is ready, Sathiyaraj."</span></pre>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
+              AUTONOMOUS LOCAL RUNTIME
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 02: Python Workflow & Task Automations -->
+        <div class="project-feature-card hover-project-trigger" data-project="automation">
+          <div class="project-copy-container">
+            <div class="project-serial-lbl">02 // AUTOMATION</div>
+            <h3 class="project-card-heading">Python Workflow &amp; Task Daemons</h3>
+            <p class="project-card-desc">
+              A suite of automated background utility scripts engineered to remove repetitive manual labor—including automated filesystem organization, data extraction pipelines, scheduled backup daemons, and system health checks.
+            </p>
+            <div class="project-tag-strip">
+              PYTHON 3 // OS HOOKS // AUTOMATED DAEMONS // BATCH PARSING
+            </div>
+            <span class="project-action-link-btn hover-trigger">
+              INSPECT IMPLEMENTATION <span>↗</span>
+            </span>
+          </div>
+
+          <div class="project-card-visual-frame">
+            <div class="ui-mock-window">
+              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              </div>
+              <pre class="code-terminal-pre">
+<span style="color: #FF5500;">import</span> os, time, schedule
+
+<span style="color: #38BDF8;">def</span> <span style="color: #FFF;">run_sync_daemon</span>():
+    catalog = scan_and_index(<span style="color: #FBBF24;">"/target_dir"</span>)
+    sanitize_records(catalog)
+    trigger_export_vcf(catalog)
+    print(<span style="color: #4ADE80;">"[DAEMON] Sync completed with 0 errors"</span>)</pre>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
+              SYSTEM AUTOMATION PIPELINE
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 03: AI-Assisted Web Creation Engine -->
+        <div class="project-feature-card hover-project-trigger" data-project="web">
+          <div class="project-copy-container">
+            <div class="project-serial-lbl">03 // FRONTEND &amp; AI</div>
+            <h3 class="project-card-heading">AI-Assisted Web Creation Engine</h3>
+            <p class="project-card-desc">
+              Developing modern, high-performance web frontends and micro-tools powered by intelligent component synthesis, semantic structure, responsive CSS layout architectures, and reactive client state management.
+            </p>
+            <div class="project-tag-strip">
+              HTML5 // MODERN CSS3 // JAVASCRIPT // UI ARCHITECTURE
+            </div>
+            <span class="project-action-link-btn hover-trigger">
+              VIEW ARCHITECTURE <span>↗</span>
+            </span>
+          </div>
+
+          <div class="project-card-visual-frame">
+            <div class="ui-mock-window">
+              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              </div>
+              <pre class="code-terminal-pre">
+<span style="color: #FF5500;">const</span> <span style="color: #FFF;">engine</span> = <span style="color: #38BDF8;">new</span> SemanticSynthesizer({
+  grid: <span style="color: #FBBF24;">'fluid-12-col'</span>,
+  contrast: <span style="color: #FBBF24;">'high-impact'</span>,
+  motion: <span style="color: #FBBF24;">'cubic-bezier(0.16, 1, 0.3, 1)'</span>,
+  perfMetric: <span style="color: #4ADE80;">'100/100 Core Web Vitals'</span>
+});</pre>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
+              HIGH-PERFORMANCE INTERFACES
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 04: SQL Database & Systems Architecture -->
+        <div class="project-feature-card hover-project-trigger" data-project="database">
+          <div class="project-copy-container">
+            <div class="project-serial-lbl">04 // DATA ARCHITECTURE</div>
+            <h3 class="project-card-heading">SQL Database Systems &amp; Schemas</h3>
+            <p class="project-card-desc">
+              Relational database schemas, normalized data models (3NF), complex multi-table joins, and query optimization designed for academic records and real-world transactional systems.
+            </p>
+            <div class="project-tag-strip">
+              RELATIONAL SQL // NORMALIZATION // SCHEMA DESIGN // INDEXING
+            </div>
+            <span class="project-action-link-btn hover-trigger">
+              INSPECT SCHEMA <span>↗</span>
+            </span>
+          </div>
+
+          <div class="project-card-visual-frame">
+            <div class="ui-mock-window">
+              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              </div>
+              <pre class="code-terminal-pre">
+<span style="color: #FF5500;">SELECT</span> e.student_id, e.name, AVG(g.score) <span style="color: #FF5500;">AS</span> avg_gpa
+<span style="color: #FF5500;">FROM</span> students e
+<span style="color: #FF5500;">INNER JOIN</span> grade_records g <span style="color: #FF5500;">ON</span> e.id = g.student_id
+<span style="color: #FF5500;">WHERE</span> g.academic_year = <span style="color: #38BDF8;">2026</span>
+<span style="color: #FF5500;">GROUP BY</span> e.student_id, e.name
+<span style="color: #FF5500;">ORDER BY</span> avg_gpa <span style="color: #FF5500;">DESC</span>;</pre>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
+              NORMALIZED RELATIONAL ENGINE
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06 — BLACK ACHIEVEMENT SECTION (PERSONAL AI ASSISTANT HERO)
+         ========================================================================== -->
+    <section class="achievement-black-section" id="achievement">
+      <div class="container">
+        
+        <div>
+          <div class="about-eyebrow">05 // STANDOUT MILESTONE</div>
+          <h2 class="achievement-huge-heading">
+            I BUILT MY OWN PERSONAL ASSISTANT.
+          </h2>
+          <p class="achievement-lead-text">
+            Not a simple ChatGPT prompt or generic wrapper. A real, locally running voice-driven assistant built with Python that controls desktop tasks, listens for natural audio commands, and interfaces with LLMs to solve everyday problems.
+          </p>
+        </div>
+
+        <div class="achievement-stage-box">
+          
+          <!-- Achievement Highlights & Quote -->
+          <div>
+            <div class="achievement-badges-matrix">
+              <div class="achieve-badge-block">VOICE DRIVEN PIPELINE</div>
+              <div class="achieve-badge-block">DESKTOP AUTOMATION</div>
+              <div class="achieve-badge-block">INTELLIGENT LLM BACKEND</div>
+              <div class="achieve-badge-block">CUSTOM TOOL DISPATCH</div>
+            </div>
+
+            <p style="font-size: 1.12rem; color: var(--text-dark-secondary); line-height: 1.7; margin-bottom: 2rem;">
+              The project gave me deep, hands-on understanding of real-time audio capture, asynchronous subprocess handling, exception safety in long-running services, and how to harness LLM reasoning to drive deterministic OS actions.
+            </p>
+
+            <div class="achievement-epic-quote">
+              "AI isn't just something I use. It's something I build with."
+            </div>
+          </div>
+
+          <!-- Interactive Assistant Console Simulator -->
+          <div class="assistant-console-frame hover-ai-trigger">
+            <div class="console-bar-top">
+              <span>AGENT_PID: 4092 // ACTIVE</span>
+              <span style="color: var(--accent-orange);">ENGINE: PYTHON_CORE</span>
+            </div>
+
+            <div class="console-inner-screen">
+              
+              <!-- Dynamic Audio Waveform -->
+              <div class="console-speech-wave" id="console-waveform" aria-label="Audio Visualizer">
+                <span class="active"></span>
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+
+              <!-- Console Output Feed -->
+              <div id="console-logs-feed" style="font-family: var(--font-mono); font-size: 0.8rem; color: #A1A1AA; line-height: 1.7; height: 160px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.4rem; padding-right: 0.5rem;">
+                <div><span style="color: #71717A;">19:42:01</span> [SYSTEM] Audio engine initialized (16,000 Hz, Mono)</div>
+                <div><span style="color: #71717A;">19:42:03</span> [AGENT] Sathiyaraj assistant daemon online. Listening...</div>
+                <div><span style="color: var(--accent-orange);">19:42:08</span> [AUDIO IN] "Sathiyaraj, what projects are in active development?"</div>
+                <div><span style="color: #4ADE80;">19:42:09</span> [AI RESPONSE] "Active builds: Personal Assistant v2.1, Python workflow daemons, and portfolio engine."</div>
+              </div>
+
+              <!-- Interactive Prompt Buttons -->
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                <button class="assistant-sim-btn hover-trigger" data-cmd="status" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
+                  ▶ "Check System Status"
+                </button>
+                <button class="assistant-sim-btn hover-trigger" data-cmd="skills" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
+                  ▶ "List Sathiyaraj's Stack"
+                </button>
+                <button class="assistant-sim-btn hover-trigger" data-cmd="why" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
+                  ▶ "Why Did You Build This?"
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         07 — ORANGE / BLACK CONTACT SECTION (NO FORM, PURE EDITORIAL)
+         ========================================================================== -->
+    <section class="contact-dramatic-section" id="contact">
+      <div class="contact-animated-beam" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="about-eyebrow" style="color: var(--accent-orange);">06 // COLLABORATE &amp; CONNECT</div>
+        
+        <h2 class="contact-giant-heading hover-text-trigger">
+          HAVE AN IDEA?<br>
+          <span class="accent">LET'S BUILD IT.</span>
+        </h2>
+
+        <p class="hero-lead-paragraph" style="color: var(--text-dark-secondary); max-width: 640px; margin-bottom: 3rem;">
+          Whether you have an internship opportunity, an AI project in need of a hands-on builder, or want to discuss modern software paradigms—my inbox is open.
+        </p>
+
+        <a href="mailto:sathiyaraj@example.com" class="contact-btn-huge btn-magnetic hover-btn-trigger">
+          <span>START A CONVERSATION</span> <span class="btn-arrow">↗</span>
+        </a>
+
+        <!-- Three Clean Interactive Contact Cards -->
+        <div class="contact-cards-container">
+          
+          <!-- 01: Email -->
+          <a href="mailto:sathiyaraj@example.com" class="contact-link-card hover-btn-trigger">
+            <div>
+              <span class="contact-card-tag">// 01 DIRECT MAIL</span>
+              <h3 class="contact-card-title">EMAIL</h3>
+              <p class="contact-card-value">sathiyaraj@example.com</p>
+            </div>
+            <div class="contact-card-action">
+              <span>SEND AN EMAIL</span> <span class="action-arrow">↗</span>
+            </div>
+          </a>
+
+          <!-- 02: GitHub -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link-card hover-btn-trigger">
+            <div>
+              <span class="contact-card-tag">// 02 SOURCE &amp; REPOSITORIES</span>
+              <h3 class="contact-card-title">GITHUB</h3>
+              <p class="contact-card-value">github.com/sathiyaraj</p>
+            </div>
+            <div class="contact-card-action">
+              <span>EXPLORE BUILDS</span> <span class="action-arrow">↗</span>
+            </div>
+          </a>
+
+          <!-- 03: LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link-card hover-btn-trigger">
+            <div>
+              <span class="contact-card-tag">// 03 PROFESSIONAL NETWORK</span>
+              <h3 class="contact-card-title">LINKEDIN</h3>
+              <p class="contact-card-value">linkedin.com/in/sathiyaraj</p>
+            </div>
+            <div class="contact-card-action">
+              <span>LET'S CONNECT</span> <span class="action-arrow">↗</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Main JavaScript Bundle -->
+  <script src="js/main.js"></script>
+</body>
+</html>

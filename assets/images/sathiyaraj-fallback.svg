@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181D" />
+      <stop offset="50%" stop-color="#101014" />
+      <stop offset="100%" stop-color="#09090B" />
+    </linearGradient>
+
+    <!-- Orange Rim Lighting -->
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5500" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FF5500" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="ambientOrange" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FF5500" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#FF5500" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Skin Tone Shading -->
+    <linearGradient id="skinGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#D49B72" />
+      <stop offset="60%" stop-color="#BC7F55" />
+      <stop offset="100%" stop-color="#8F5936" />
+    </linearGradient>
+
+    <linearGradient id="neckShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#734222" />
+      <stop offset="100%" stop-color="#552F16" />
+    </linearGradient>
+
+    <!-- Clothing Gradient -->
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F1F24" />
+      <stop offset="70%" stop-color="#141417" />
+      <stop offset="100%" stop-color="#0C0C0E" />
+    </linearGradient>
+
+    <!-- Technical Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+  <rect width="800" height="1000" fill="url(#ambientOrange)" />
+  <rect width="800" height="1000" fill="url(#techGrid)" />
+
+  <!-- Background Subtle Tech Geometry -->
+  <g opacity="0.4">
+    <circle cx="600" cy="300" r="180" fill="none" stroke="rgba(255,85,0,0.15)" stroke-width="1.5" stroke-dasharray="8 6" />
+    <circle cx="600" cy="300" r="140" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    <line x1="600" y1="80" x2="600" y2="520" stroke="rgba(255,85,0,0.1)" stroke-width="1" stroke-dasharray="4 4" />
+    <line x1="380" y1="300" x2="820" y2="300" stroke="rgba(255,85,0,0.1)" stroke-width="1" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Developer Silhouette & Portrait -->
+  <g id="portrait-figure" transform="translate(0, 40)">
+    
+    <!-- Shoulders & Upper Body (Dark Tech Jacket/Hoodie) -->
+    <path d="M 160 840 C 200 680, 270 600, 400 590 C 530 600, 600 680, 640 840 L 680 980 L 120 980 Z" fill="url(#hoodieGrad)" />
+    
+    <!-- Collar & Zip Details -->
+    <path d="M 340 600 L 400 700 L 460 600 Z" fill="#18181C" />
+    <path d="M 400 700 L 400 880" stroke="#FF5500" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Subtle Orange Rim Light on Shoulder -->
+    <path d="M 160 840 C 190 700, 250 630, 340 600" fill="none" stroke="url(#orangeGlow)" stroke-width="3" opacity="0.6" />
+    <path d="M 640 840 C 610 700, 550 630, 460 600" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+
+    <!-- Neck -->
+    <rect x="360" y="470" width="80" height="130" rx="10" fill="url(#neckShadow)" />
+    
+    <!-- Jawline & Head -->
+    <path d="M 290 320 C 290 490, 330 520, 400 520 C 470 520, 510 490, 510 320 C 510 210, 470 170, 400 170 C 330 170, 290 210, 290 320 Z" fill="url(#skinGrad)" />
+    
+    <!-- Ears -->
+    <ellipse cx="288" cy="340" rx="18" ry="32" fill="#BA7D54" />
+    <ellipse cx="512" cy="340" rx="18" ry="32" fill="#BA7D54" />
+    <!-- Orange Rim Light on Left Ear -->
+    <path d="M 276 320 C 272 340, 276 360, 285 370" fill="none" stroke="#FF5500" stroke-width="2.5" opacity="0.8" />
+
+    <!-- Hair (Modern textured crop) -->
+    <path d="M 285 270 C 275 220, 310 140, 400 135 C 490 140, 525 220, 515 270 C 500 230, 470 200, 400 200 C 330 200, 300 230, 285 270 Z" fill="#141416" />
+    <path d="M 285 230 C 300 170, 350 145, 410 145 C 470 145, 510 175, 520 220 C 500 170, 460 155, 405 155 C 345 155, 305 185, 285 230 Z" fill="#202024" />
+
+    <!-- Eyes / Brow Definition -->
+    <!-- Eyebrows -->
+    <path d="M 325 300 C 345 292, 368 296, 375 302" stroke="#1C1816" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    <path d="M 475 300 C 455 292, 432 296, 425 302" stroke="#1C1816" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    
+    <!-- Eyes -->
+    <ellipse cx="352" cy="318" rx="14" ry="7" fill="#FFFFFF" />
+    <circle cx="353" cy="318" r="6" fill="#1A1817" />
+    <circle cx="355" cy="316" r="2" fill="#FFFFFF" />
+    
+    <ellipse cx="448" cy="318" rx="14" ry="7" fill="#FFFFFF" />
+    <circle cx="447" cy="318" r="6" fill="#1A1817" />
+    <circle cx="449" cy="316" r="2" fill="#FFFFFF" />
+
+    <!-- Modern Minimalist Glasses (Developer Archetype) -->
+    <rect x="325" y="302" width="58" height="34" rx="8" fill="none" stroke="#2B2B30" stroke-width="3" />
+    <rect x="417" y="302" width="58" height="34" rx="8" fill="none" stroke="#2B2B30" stroke-width="3" />
+    <line x1="383" y1="316" x2="417" y2="316" stroke="#2B2B30" stroke-width="3" />
+    <!-- Subtle Lens Reflection -->
+    <line x1="334" y1="330" x2="352" y2="310" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+    <line x1="426" y1="330" x2="444" y2="310" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Nose -->
+    <path d="M 400 315 L 396 375 L 406 378" stroke="#8F5936" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+    <!-- Lips / Determined Expression -->
+    <path d="M 374 422 C 390 426, 410 426, 426 422" stroke="#68391C" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M 382 435 C 394 438, 406 438, 418 435" stroke="#7A4523" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  </g>
+
+  <!-- Atmospheric Bottom Dark Fade -->
+  <rect y="760" width="800" height="240" fill="url(#bottomFade)" />
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#09090B" stop-opacity="0" />
+    <stop offset="80%" stop-color="#09090B" stop-opacity="0.9" />
+    <stop offset="100%" stop-color="#09090B" stop-opacity="1" />
+  </linearGradient>
+
+  <!-- Fine Technical HUD Watermarks -->
+  <g transform="translate(40, 920)" font-family="'JetBrains Mono', monospace" font-size="12" fill="#71717A">
+    <text x="0" y="0" font-weight="600" letter-spacing="2">PORTRAIT // SATHIYARAJ</text>
+    <text x="0" y="22" font-size="10" fill="#FF5500" letter-spacing="1">B.E. COMPUTER SCIENCE &amp; ENGINEERING</text>
+  </g>
+</svg>
