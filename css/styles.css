@@ -1078,9 +1078,15 @@ button {
 
 .footer-content-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.35fr 1.25fr 0.9fr;
+  gap: 40px;
   margin-bottom: 48px;
+}
+
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .footer-logo {
@@ -1183,12 +1189,11 @@ button {
 .footer-bottom-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   font-family: var(--font-mono);
   font-size: 0.74rem;
   color: var(--text-muted);
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 /* ==========================================================================
@@ -1436,8 +1441,9 @@ button {
     gap: 28px;
   }
   .footer-bottom-flex {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 
