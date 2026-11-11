@@ -2,27 +2,27 @@
 
 > **Developer:** Sathiyaraj — B.E. Computer Science and Engineering, Roever Engineering College (2023–2027)  
 > **Specialization:** Applied AI, Python Automation, Relational Data (SQL), and Modern Web Systems  
-> **Design Direction:** Awwwards-grade High-Contrast Editorial (Deep Black `#09090B` + Clean White `#FFFFFF` + Surgical Orange `#FF5500`)  
-> **Interactive Systems:** Dynamic HUD Reticle Cursor, Smooth Navigation Pill Physics, Interactive Skills Matrix, Simulated Voice Assistant Console, and Technical Architecture Inspection Modals.
+> **Design Direction:** Unslop-certified Technical Architecture (Ink `#0B0D13` + Hairlines + Restrained Ember Accent `#FF5500`)  
+> **Interactive Systems:** Floating Navigation, Interactive Skills Matrix, Simulated Voice Assistant Console, and Technical Architecture Inspection Modals.
 
 ---
 
 ## 📌 Architecture & Site Structure
 
 ```
-01 — Hero               (HUD Reticle & Canvas particle telemetry, dynamic headline, personal 3D portrait)
+01 — Hero               (Available badge, precise typography, developer portrait)
   ↓
-02 — About              (01 // Philosophy & Identity, editorial grid, core mindset & technical snapshot)
+02 — About              (Philosophy & background, editorial grid, core mindset & technical snapshot)
   ↓
-03 — Journey            (02 // Academic Foundation, B.E. CSE timeline, HSC & SSLC foundation)
+03 — Journey            (Academic foundation, B.E. CSE timeline, HSC & SSLC foundation)
   ↓
-04 — Skills Matrix      (03 // Technical Toolkit, real-time detail inspector for AI, Python, Web, SQL, Git)
+04 — Skills Matrix      (Technical toolkit, real-time detail inspector for AI, Python, Web, SQL, Git)
   ↓
-05 — Selected Projects  (04 // Selected Work, Personal Assistant, Python Daemons, Web Engine, SQL Schemas)
+05 — Selected Projects  (Selected work, Personal Assistant, Python Daemons, Web Engine, SQL Schemas)
   ↓
-06 — Milestone          (05 // Standout Milestone, interactive assistant console simulator & audio waveform)
+06 — Milestone          (Flagship milestone, interactive assistant console simulator)
   ↓
-07 — Contact            (06 // Collaborate & Connect, verified direct email, GitHub & LinkedIn channels)
+07 — Contact            (Contact & collaboration, verified direct email, GitHub & LinkedIn channels)
   ↓
 Footer                  (Technical telemetry, operational badge, full site navigation & Back-to-Top)
 ```
