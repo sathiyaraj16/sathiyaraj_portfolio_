@@ -637,4 +637,220 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 550);
     });
   });
+
+  // ==========================================================================
+  // 5. TECHNICAL PROJECT INSPECTION MODAL SYSTEM
+  // ==========================================================================
+  const projectModalBackdrop = document.getElementById('project-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalProjectId = document.getElementById('modal-project-id');
+  const modalContentContainer = document.getElementById('modal-content');
+  const projectActionButtons = document.querySelectorAll('.project-action-link-btn[data-project]');
+
+  const projectModalData = {
+    assistant: {
+      id: '// PROJECT 01',
+      title: 'Autonomous Personal AI Assistant',
+      desc: 'An offline-first, voice-controlled execution bridge running locally on Python 3. Combines speech recognition, local reasoning hooks, OS task dispatching, and asynchronous background worker daemons.',
+      metrics: [
+        { label: 'RUNTIME', value: 'Python 3.12 Core' },
+        { label: 'SPEECH LATENCY', value: '< 240ms' },
+        { label: 'PROCESS FOOTPRINT', value: '42 MB RAM' },
+        { label: 'ARCHITECTURE', value: 'Async Subprocess' }
+      ],
+      code: `class VoiceAgentDaemon:
+    def __init__(self, sample_rate=16000):
+        self.mic = AudioStream(rate=sample_rate, channels=1)
+        self.engine = LLMDispatcher(mode="low-latency")
+        self.os_bridge = OSTaskHook()
+
+    async def event_loop(self):
+        while True:
+            audio_frame = await self.mic.capture_burst()
+            if self.mic.detect_speech(audio_frame):
+                query = await self.engine.transcribe(audio_frame)
+                action = self.engine.route_intent(query)
+                res = await self.os_bridge.execute(action)
+                await self.mic.speak(res.feedback)`,
+      takeaways: [
+        'Direct local microphone streaming into low-latency voice-activity detection (VAD).',
+        'Intent parsing decoupled from execution to ensure zero unintended OS operations.',
+        'Deterministic shell and automation tool calls guarded by schema validation.'
+      ]
+    },
+    automation: {
+      id: '// PROJECT 02',
+      title: 'Python Workflow & Task Daemons',
+      desc: 'Robust automation infrastructure developed to eliminate manual digital toil. Implements filesystem event listeners, multi-threaded batch processors, and automated health checks.',
+      metrics: [
+        { label: 'DAEMON ENGINE', value: 'Multi-threaded' },
+        { label: 'SYNC LATENCY', value: 'Real-time (0s)' },
+        { label: 'ERROR RATE', value: '0.00% Managed' },
+        { label: 'OS INTERFACE', value: 'Native Win32/POSIX' }
+      ],
+      code: `import os, time, schedule
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
+class PipelineWatcher(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory and event.src_path.endswith(('.csv', '.json')):
+            records = parse_and_validate(event.src_path)
+            export_payload = transform_3nf_records(records)
+            push_to_data_warehouse(export_payload)
+            archive_source(event.src_path)`,
+      takeaways: [
+        'Watchdog-driven filesystem observers that trigger instant ingestion upon file drops.',
+        'Fault-tolerant retry schedules and automatic backup snapshots with sha256 checksum verification.',
+        'Lightweight background daemons operating with near-zero idle CPU usage.'
+      ]
+    },
+    web: {
+      id: '// PROJECT 03',
+      title: 'AI-Assisted Web Creation Engine',
+      desc: 'A high-performance interface architecture prioritizing raw HTML5 semantics, zero-dependency vanilla JavaScript, fluid CSS math, and 100/100 Core Web Vitals.',
+      metrics: [
+        { label: 'PERFORMANCE', value: '100 / 100 Vitals' },
+        { label: 'FRAME RATE', value: '60 FPS Fixed' },
+        { label: 'DEPENDENCIES', value: '0 Runtime Bloat' },
+        { label: 'ACCESSIBILITY', value: 'WCAG 2.1 AAA' }
+      ],
+      code: `// High-Precision Physics Interpolation (Lerp)
+const lerp = (start, target, factor) => start + (target - start) * factor;
+
+function renderFrame() {
+  currentScroll += (targetScroll - currentScroll) * 0.12;
+  hudReticle.style.transform = \`translate3d(\${reticleX}px, \${reticleY}px, 0)\`;
+  requestAnimationFrame(renderFrame);
+}`,
+      takeaways: [
+        'Strict semantic HTML structuring ensuring universal screen-reader accessibility.',
+        'Hardware-accelerated CSS transforms (translate3d) isolating rendering to the GPU compositor layer.',
+        'Progressive enhancement with comprehensive media queries supporting all form factors.'
+      ]
+    },
+    database: {
+      id: '// PROJECT 04',
+      title: 'SQL Database Systems & Schemas',
+      desc: 'Third Normal Form (3NF) relational architectures designed for high concurrency, zero data redundancy, composite index performance, and strict transactional ACID guarantees.',
+      metrics: [
+        { label: 'NORMALIZATION', value: '3NF Compliant' },
+        { label: 'QUERY SPEED', value: '< 2.4ms Indexed' },
+        { label: 'CONCURRENCY', value: 'ACID Isolated' },
+        { label: 'DIALECTS', value: 'PostgreSQL / MySQL' }
+      ],
+      code: `CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    roll_number VARCHAR(32) UNIQUE NOT NULL,
+    full_name VARCHAR(128) NOT NULL,
+    department VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE academic_records (
+    record_id SERIAL PRIMARY KEY,
+    student_id INT REFERENCES students(id) ON DELETE CASCADE,
+    semester INT CHECK (semester BETWEEN 1 AND 8),
+    subject_code VARCHAR(16) NOT NULL,
+    grade_points NUMERIC(3,2) NOT NULL,
+    CONSTRAINT unique_student_subject UNIQUE (student_id, subject_code, semester)
+);
+
+CREATE INDEX idx_academic_lookup ON academic_records (student_id, semester);`,
+      takeaways: [
+        'Enforced referential integrity via cascade delete rules and check constraints.',
+        'Composite B-Tree indexes tailored directly to analytical query patterns.',
+        'Sub-millisecond query execution plans verified via EXPLAIN ANALYZE.'
+      ]
+    }
+  };
+
+  function openProjectModal(key) {
+    const data = projectModalData[key];
+    if (!data || !projectModalBackdrop || !modalContentContainer) return;
+
+    if (modalProjectId) modalProjectId.textContent = data.id;
+
+    let metricsHtml = '';
+    data.metrics.forEach((m) => {
+      metricsHtml += `
+        <div class="modal-metric-box">
+          <div class="modal-metric-lbl">${m.label}</div>
+          <div class="modal-metric-val">${m.value}</div>
+        </div>
+      `;
+    });
+
+    let takeawaysHtml = '';
+    data.takeaways.forEach((t) => {
+      takeawaysHtml += `<li>${t}</li>`;
+    });
+
+    modalContentContainer.innerHTML = `
+      <h3 class="modal-title-heading">${data.title}</h3>
+      <p class="modal-desc-lead">${data.desc}</p>
+      
+      <div class="modal-section-title">ENGINEERING BENCHMARKS</div>
+      <div class="modal-grid-metrics">${metricsHtml}</div>
+
+      <div class="modal-section-title">ARCHITECTURE SPECIFICATION // SOURCE</div>
+      <pre class="modal-code-block"><code>${escapeHtml(data.code)}</code></pre>
+
+      <div class="modal-section-title">KEY SYSTEM TAKEAWAYS</div>
+      <ul class="modal-takeaways-list">${takeawaysHtml}</ul>
+    `;
+
+    projectModalBackdrop.classList.add('active');
+    projectModalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    if (!projectModalBackdrop) return;
+    projectModalBackdrop.classList.remove('active');
+    projectModalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  projectActionButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const projKey = btn.getAttribute('data-project');
+      if (projKey) openProjectModal(projKey);
+    });
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeProjectModal);
+  }
+
+  if (projectModalBackdrop) {
+    projectModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === projectModalBackdrop) {
+        closeProjectModal();
+      }
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModalBackdrop && projectModalBackdrop.classList.contains('active')) {
+      closeProjectModal();
+    }
+  });
+
+  // ==========================================================================
+  // 6. BACK TO TOP SMOOTH SCROLL
+  // ==========================================================================
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });

@@ -1,0 +1,24 @@
+{
+  "name": "sathiyaraj-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Sathiyaraj — Computer Science Student, Developer & AI Builder",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve . -l 3000",
+    "start": "serve . -l 3000",
+    "serve": "serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "awwwards",
+    "developer",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Sathiyaraj",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
