@@ -3,97 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sathiyaraj-portfolio</title>
-  <meta name="description" content="Portfolio of Sathiyaraj — 20-year-old Computer Science and Engineering student building real systems with AI, Python automation, SQL, and modern web technologies.">
-  <meta name="theme-color" content="#09090B">
+  <title>Sathiyaraj — Developer &amp; Systems Engineer</title>
+  <meta name="description" content="Portfolio of Sathiyaraj — Computer Science and Engineering student building systems with applied AI, Python automation daemons, SQL, and modern web architecture.">
+  <meta name="theme-color" content="#0B0D13">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Sathiyaraj — Computer Science Student, Developer & AI Builder">
-  <meta property="og:description" content="Awwwards-grade developer portfolio for Sathiyaraj — Building with AI & Code.">
+  <meta property="og:title" content="Sathiyaraj — Developer &amp; Systems Engineer">
+  <meta property="og:description" content="Engineering portfolio for Sathiyaraj — Systems, automation, and applied AI.">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2309090B'/><circle cx='50' cy='50' r='12' fill='%23FF5500'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230B0D13'/><circle cx='50' cy='50' r='14' fill='%23FF5500'/></svg>">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Futuristic Technology HUD Cursor System -->
-  <canvas id="hud-trail-canvas" class="hud-trail-canvas" aria-hidden="true"></canvas>
-  <div class="hud-ambient-glow" id="hud-glow" aria-hidden="true"></div>
-  <div class="hud-cursor-dot" id="hud-dot" aria-hidden="true"></div>
-
-  <div class="hud-cursor-reticle" id="hud-reticle" aria-hidden="true">
-    <svg class="hud-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="hudGlowGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FF5500" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#FF5500" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="hudRadarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FF5500" stop-opacity="0.45"/>
-          <stop offset="100%" stop-color="#FF5500" stop-opacity="0.02"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Outer Subtle HUD Ring -->
-      <circle class="hud-ring-outer" cx="50" cy="50" r="44" stroke="rgba(255, 85, 0, 0.4)" stroke-width="1.2" />
-
-      <!-- Rotating Ring Segments (2-3 tiny segments) -->
-      <g class="hud-rotating-segments">
-        <circle cx="50" cy="50" r="44" stroke="#FF5500" stroke-width="1.8" stroke-dasharray="14 90" stroke-linecap="round" />
-        <circle cx="50" cy="50" r="44" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="8 96" stroke-dashoffset="45" stroke-linecap="round" />
-        <circle cx="50" cy="50" r="44" stroke="#FF5500" stroke-width="1.5" stroke-dasharray="10 94" stroke-dashoffset="85" stroke-linecap="round" />
-      </g>
-
-      <!-- Inner Precision Reticle Ring -->
-      <circle class="hud-ring-inner" cx="50" cy="50" r="28" stroke="rgba(255, 255, 255, 0.25)" stroke-width="0.8" stroke-dasharray="3 5" />
-
-      <!-- Precision Crosshairs -->
-      <line class="hud-crosshair" x1="50" y1="10" x2="50" y2="18" stroke="#FF5500" stroke-width="1.2" />
-      <line class="hud-crosshair" x1="50" y1="82" x2="50" y2="90" stroke="#FF5500" stroke-width="1.2" />
-      <line class="hud-crosshair" x1="10" y1="50" x2="18" y2="50" stroke="#FF5500" stroke-width="1.2" />
-      <line class="hud-crosshair" x1="82" y1="50" x2="90" y2="50" stroke="#FF5500" stroke-width="1.2" />
-
-      <!-- Corner Targeting Brackets -->
-      <g class="hud-brackets">
-        <path d="M22 30 L22 22 L30 22" stroke="#FF5500" stroke-width="1.5" fill="none" />
-        <path d="M78 30 L78 22 L70 22" stroke="#FF5500" stroke-width="1.5" fill="none" />
-        <path d="M22 70 L22 78 L30 78" stroke="#FF5500" stroke-width="1.5" fill="none" />
-        <path d="M78 70 L78 78 L70 78" stroke="#FF5500" stroke-width="1.5" fill="none" />
-      </g>
-
-      <!-- Rotating Radar Scanner Sweep -->
-      <path class="hud-radar-sweep" d="M50 50 L50 6 A44 44 0 0 1 85 24 Z" fill="url(#hudRadarGrad)" />
-    </svg>
-  </div>
-
-  <!-- Independent Floating Technical HUD Label Badge (Non-blocking & Offset) -->
-  <div class="hud-floating-tag" id="hud-label" aria-hidden="true"></div>
-
   <!-- ==========================================================================
-       FLOATING PILL NAVIGATION
+       QUIET FLOATING NAVIGATION
        ========================================================================== -->
   <header class="floating-nav-bar" id="navbar">
-    <nav class="nav-pill-wrapper" aria-label="Main Navigation">
-      <a href="#hero" class="pill-logo hover-nav-trigger" aria-label="Sathiyaraj Home">
-        SATHIYARAJ<span class="orange-period">.</span>
+    <nav class="nav-pill-wrapper" aria-label="Main navigation">
+      <a href="#hero" class="pill-logo" aria-label="Sathiyaraj home">
+        Sathiyaraj
       </a>
 
       <ul class="pill-links-list" role="menubar">
-        <li role="none"><a href="#hero" class="nav-link-item hover-nav-trigger active" role="menuitem">01 Home</a></li>
-        <li role="none"><a href="#about" class="nav-link-item hover-nav-trigger" role="menuitem">02 About</a></li>
-        <li role="none"><a href="#journey" class="nav-link-item hover-nav-trigger" role="menuitem">03 Journey</a></li>
-        <li role="none"><a href="#skills" class="nav-link-item hover-nav-trigger" role="menuitem">04 Skills</a></li>
-        <li role="none"><a href="#projects" class="nav-link-item hover-nav-trigger" role="menuitem">05 Projects</a></li>
-        <li role="none"><a href="#achievement" class="nav-link-item hover-nav-trigger" role="menuitem">06 Achievement</a></li>
-        <li role="none"><a href="#contact" class="nav-link-item hover-nav-trigger" role="menuitem">07 Contact</a></li>
+        <li role="none"><a href="#hero" class="nav-link-item active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" class="nav-link-item" role="menuitem">About</a></li>
+        <li role="none"><a href="#journey" class="nav-link-item" role="menuitem">Journey</a></li>
+        <li role="none"><a href="#skills" class="nav-link-item" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#projects" class="nav-link-item" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#achievement" class="nav-link-item" role="menuitem">Milestone</a></li>
+        <li role="none"><a href="#contact" class="nav-link-item" role="menuitem">Contact</a></li>
       </ul>
 
-      <button class="pill-mobile-toggle hover-nav-trigger" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="pill-mobile-toggle" aria-label="Toggle navigation menu" id="mobile-toggle-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -104,73 +51,64 @@
 
   <!-- Fullscreen Mobile Navigation Curtain -->
   <div class="mobile-nav-curtain" id="mobile-curtain" aria-hidden="true">
-    <button id="mobile-close-btn" aria-label="Close menu" style="position: absolute; top: 2rem; right: 2rem; background: transparent; border: none; color: #FFF; font-size: 2rem; cursor: pointer;">✕</button>
+    <button id="mobile-close-btn" aria-label="Close menu">✕</button>
     <a href="#hero" class="mobile-curtain-link">Home</a>
     <a href="#about" class="mobile-curtain-link">About</a>
     <a href="#journey" class="mobile-curtain-link">Journey</a>
     <a href="#skills" class="mobile-curtain-link">Skills</a>
     <a href="#projects" class="mobile-curtain-link">Projects</a>
-    <a href="#achievement" class="mobile-curtain-link">Achievement</a>
+    <a href="#achievement" class="mobile-curtain-link">Milestone</a>
     <a href="#contact" class="mobile-curtain-link">Contact</a>
   </div>
 
   <main id="main-content">
 
     <!-- ==========================================================================
-         01 — BLACK HERO SECTION (DRAMATIC "WOW" MOMENT)
+         01 — HERO SECTION
          ========================================================================== -->
-    <section class="hero-black-section" id="hero">
-      <div class="hero-ambient-glow" aria-hidden="true"></div>
-      <div class="hero-fine-grid" aria-hidden="true"></div>
-
+    <section class="hero-section" id="hero">
       <div class="container">
         <div class="hero-layout-grid">
           
-          <!-- Hero Left Statement -->
+          <!-- Hero Copy -->
           <div class="hero-copy-column">
-            <h1 class="hero-display-name hover-text-trigger">SATHIYARAJ</h1>
+            <div class="hero-meta-badge">
+              <span class="status-indicator-dot"></span>
+              <span>Available for engineering internships</span>
+            </div>
+
+            <h1 class="hero-display-name">Sathiyaraj</h1>
             
-            <p class="hero-sub-statement hover-text-trigger">
-              Building with <span class="accent">AI &amp; Code.</span>
+            <p class="hero-sub-statement">
+              Systems, automation daemons, and applied AI.
             </p>
 
             <p class="hero-lead-paragraph">
-              I'm a Computer Science student exploring AI, Python automation, SQL, and modern web creation.
+              Computer Science student at Roever Engineering College building operating system automation, relational data pipelines, and local AI agent tooling.
             </p>
 
             <div class="hero-btn-cluster">
-              <a href="#projects" class="btn-hero-primary btn-magnetic hover-btn-trigger">
-                <span>EXPLORE MY WORK</span> <span class="btn-arrow">↗</span>
+              <a href="#projects" class="btn-primary">
+                View projects
               </a>
-              <a href="#about" class="btn-hero-secondary btn-magnetic hover-btn-trigger">
-                <span>ABOUT ME</span> <span class="btn-arrow">↓</span>
+              <a href="#about" class="btn-secondary">
+                Read background
               </a>
             </div>
           </div>
 
-          <!-- Hero Right Professional Personal Image Section -->
+          <!-- Hero Portrait -->
           <div class="hero-visual-column">
-            <div class="hero-portrait-stage hover-trigger" id="hero-portrait">
-              <!-- Subtle fine grid & ambient backlight glow -->
-              <div class="portrait-ambient-glow" aria-hidden="true"></div>
-              <div class="portrait-fine-grid-backing" aria-hidden="true"></div>
-
-              <!-- Main Portrait Card Frame -->
+            <div class="hero-portrait-stage" id="hero-portrait">
               <div class="portrait-card-frame">
-                <!-- Asymmetric Technical Corner Accents -->
-                <div class="portrait-accent-corner top-left" aria-hidden="true"></div>
-                <div class="portrait-accent-corner bottom-right" aria-hidden="true"></div>
-
                 <div class="portrait-image-wrapper">
-                  <img src="assets/images/sathiyaraj.svg" alt="Sathiyaraj — Computer Science Student &amp; Developer" class="portrait-photo" id="portrait-photo" onerror="this.onerror=null; this.src='assets/images/sathiyaraj-fallback.svg';">
-                  <!-- Seamless Dark Gradient Fade at Base -->
+                  <img src="assets/images/sathiyaraj.svg" alt="Sathiyaraj portrait" class="portrait-photo" id="portrait-photo" onerror="this.onerror=null; this.src='assets/images/sathiyaraj-fallback.svg';">
                   <div class="portrait-bottom-fade" aria-hidden="true"></div>
                 </div>
 
-                <!-- Minimal Technical Signature Tag -->
                 <div class="portrait-caption-tag">
-                  <span class="portrait-caption-name">SATHIYARAJ</span>
-                  <span class="portrait-caption-role">ENGINEERING &amp; AI</span>
+                  <span class="portrait-caption-name">Sathiyaraj</span>
+                  <span class="portrait-caption-role">B.E. Computer Science</span>
                 </div>
               </div>
             </div>
@@ -178,70 +116,64 @@
 
         </div>
       </div>
-
-      <a href="#about" class="hero-scroll-link" aria-label="Scroll to About section">
-        SCROLL TO DISCOVER ↓
-      </a>
     </section>
 
     <!-- ==========================================================================
-         02 — WHITE ABOUT SECTION (EDITORIAL HIGH-CONTRAST)
+         02 — ABOUT SECTION
          ========================================================================== -->
-    <section class="about-white-section" id="about">
+    <section class="section section-border-top" id="about">
       <div class="container">
         <div class="about-editorial-grid">
           
           <!-- Manifesto Left -->
           <div>
-            <div class="about-eyebrow">01 // PHILOSOPHY &amp; IDENTITY</div>
-            <h2 class="about-manifesto-title">
-              I LIKE TO BUILD THINGS THAT ACTUALLY WORK.
+            <div class="section-eyebrow">Philosophy &amp; background</div>
+            <h2 class="section-title">
+              Building software that solves operational problems
             </h2>
             <p class="about-lead-copy">
-              I'm a 20-year-old Computer Science and Engineering student at Roever Engineering College with an unrelenting appetite for technical experimentation. I don't just memorize algorithms for exams—I write code to automate tasks, connect intelligent models to real operating systems, and ship digital products.
+              I am a 20-year-old Computer Science and Engineering student at Roever Engineering College. Rather than stopping at textbook exercises, I write code that automates repetitive desktop workflows, connects local models to host operating systems, and handles structured transactional data.
             </p>
             <p class="about-secondary-copy">
-              Technology is evolving faster than traditional syllabi can keep up. My edge comes from self-directed curiosity: building my own voice assistant from scratch, engineering complex SQL database schemas, orchestrating Python automation scripts, and exploring the frontier of context engineering and AI tools.
+              My engineering focus is driven by self-directed projects: developing a voice-controlled personal assistant from scratch in Python, designing normalized SQL databases, writing background daemons, and structuring reliable context for LLM agents.
             </p>
 
-            <!-- Animated Interactive Keywords Wall -->
             <div class="about-keywords-cluster">
-              <span class="keyword-badge hover-trigger">ARTIFICIAL INTELLIGENCE</span>
-              <span class="keyword-badge hover-trigger">PYTHON AUTOMATION</span>
-              <span class="keyword-badge hover-trigger">AI WEB CREATION</span>
-              <span class="keyword-badge hover-trigger">SQL ARCHITECTURE</span>
-              <span class="keyword-badge hover-trigger">CONTEXT ENGINEERING</span>
-              <span class="keyword-badge hover-trigger">VERSION CONTROL</span>
-              <span class="keyword-badge hover-trigger">AUTONOMOUS AGENTS</span>
+              <span class="keyword-badge">Artificial Intelligence</span>
+              <span class="keyword-badge">Python Automation</span>
+              <span class="keyword-badge">SQL Architecture</span>
+              <span class="keyword-badge">Context Engineering</span>
+              <span class="keyword-badge">Web Architecture</span>
+              <span class="keyword-badge">Version Control</span>
             </div>
           </div>
 
           <!-- Technical Snapshot Right -->
           <div class="about-meta-card">
-            <div>
-              <div class="about-meta-item-lbl">DEVELOPER IDENTITY</div>
-              <div class="about-meta-item-val">Sathiyaraj</div>
+            <div class="meta-item">
+              <div class="meta-label">Developer identity</div>
+              <div class="meta-value">Sathiyaraj</div>
             </div>
-            <div>
-              <div class="about-meta-item-lbl">AGE &amp; DEMOGRAPHICS</div>
-              <div class="about-meta-item-val">20 Years Old • Perambalur, India</div>
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-value">Perambalur, India</div>
             </div>
-            <div>
-              <div class="about-meta-item-lbl">ACADEMIC DEGREE</div>
-              <div class="about-meta-item-val">B.E. Computer Science &amp; Engineering</div>
+            <div class="meta-item">
+              <div class="meta-label">Academic degree</div>
+              <div class="meta-value">B.E. Computer Science &amp; Engineering</div>
             </div>
-            <div>
-              <div class="about-meta-item-lbl">INSTITUTE</div>
-              <div class="about-meta-item-val">Roever Engineering College</div>
+            <div class="meta-item">
+              <div class="meta-label">Institution</div>
+              <div class="meta-value">Roever Engineering College</div>
             </div>
-            <div>
-              <div class="about-meta-item-lbl">PRIMARY PARADIGM</div>
-              <div class="about-meta-item-val orange">AI-Augmented Software Engineering</div>
+            <div class="meta-item">
+              <div class="meta-label">Primary focus</div>
+              <div class="meta-value highlight">Systems &amp; Applied AI</div>
             </div>
-            <div>
-              <div class="about-meta-item-lbl">CORE MINDSET</div>
-              <p style="font-size: 0.95rem; color: var(--text-light-secondary); line-height: 1.6; margin-top: 0.25rem;">
-                "Don't wait for permission or finished courses. Pick up the documentation, run the code, break it, fix it, and ship something functional."
+            <div class="meta-item">
+              <div class="meta-label">Core approach</div>
+              <p class="meta-quote">
+                Read the specifications, write the prototype, test edge cases, and deploy functional software.
               </p>
             </div>
           </div>
@@ -251,63 +183,63 @@
     </section>
 
     <!-- ==========================================================================
-         03 — LIGHT EDUCATION SECTION (MY JOURNEY TIMELINE)
+         03 — JOURNEY SECTION
          ========================================================================== -->
-    <section class="education-light-section" id="journey">
+    <section class="section section-border-top" id="journey">
       <div class="container">
         
-        <div>
-          <div class="about-eyebrow">02 // ACADEMIC FOUNDATION</div>
-          <h2 class="about-manifesto-title" style="margin-bottom: 1rem;">MY JOURNEY</h2>
-          <p style="font-size: 1.15rem; color: var(--text-light-muted); max-width: 640px;">
-            A progression of discipline, technical growth, and hands-on computer science training.
+        <div class="section-header-block">
+          <div class="section-eyebrow">Academic foundation</div>
+          <h2 class="section-title">Academic journey</h2>
+          <p class="section-subtitle">
+            A progression of discipline, technical rigor, and hands-on computer science training.
           </p>
         </div>
 
         <div class="journey-timeline-stack">
           
           <!-- Stage 01: Engineering -->
-          <div class="journey-stage-row hover-trigger">
+          <div class="journey-stage-row">
             <div class="journey-stage-num">01</div>
             <div>
               <h3 class="journey-degree-title">B.E. Computer Science &amp; Engineering</h3>
               <p class="journey-institution-name">Roever Engineering College, Perambalur</p>
-              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
-                Currently immersing in core computer science disciplines including data structures, relational database systems, operating system concepts, and modern artificial intelligence application design.
+              <p class="journey-desc">
+                Core coursework in algorithms, data structures, relational database management, operating systems, and computer networks with an active 8.6 CGPA.
               </p>
             </div>
-            <div class="journey-status-tag" style="color: var(--accent-orange); border: 1px solid var(--accent-orange-border); background: var(--accent-orange-tint);">
-              PURSUING // CURRENT
+            <div class="journey-status-tag current">
+              Current · 2023–2027
             </div>
           </div>
 
           <!-- Stage 02: HSC -->
-          <div class="journey-stage-row hover-trigger">
+          <div class="journey-stage-row">
             <div class="journey-stage-num">02</div>
             <div>
-              <h3 class="journey-degree-title">Higher Secondary Certificate (HSC / 12th)</h3>
+              <h3 class="journey-degree-title">Higher Secondary Certificate (HSC)</h3>
               <p class="journey-institution-name">Government Higher Secondary School, VKM</p>
-              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
-                Focused on higher secondary sciences and mathematics, establishing foundational analytical reasoning and logical problem solving necessary for engineering.
+              <p class="journey-desc">
+                Higher secondary curriculum in physics, chemistry, and advanced mathematics, establishing analytical problem-solving fundamentals.
               </p>
             </div>
             <div class="journey-status-tag">
-              COMPLETED // MERIT
+              Completed · 2023
             </div>
           </div>
 
           <!-- Stage 03: SSLC -->
-          <div class="journey-stage-row hover-trigger">
+          <div class="journey-stage-row">
             <div class="journey-stage-num">03</div>
             <div>
               <h3 class="journey-degree-title">Secondary School Leaving Certificate (SSLC)</h3>
               <p class="journey-institution-name">Government Higher Secondary School, VKM</p>
-              <p style="font-size: 0.95rem; color: var(--text-light-muted); margin-top: 0.5rem; line-height: 1.6;">
-                Secondary school education with high academic standing, igniting early passion for computing, electronics, and logic systems.
+              <p class="journey-desc">
+                Foundational general education with academic distinction, initiating early work in computer basics and software logic.
               </p>
             </div>
             <div class="journey-status-tag">
-              COMPLETED // FOUNDATION
+              Completed · 2021
             </div>
           </div>
 
@@ -317,62 +249,62 @@
     </section>
 
     <!-- ==========================================================================
-         04 — WHITE SKILLS SECTION (INTERACTIVE SKILL WALL)
+         04 — SKILLS SECTION
          ========================================================================== -->
-    <section class="skills-interactive-section" id="skills">
+    <section class="section section-border-top" id="skills">
       <div class="container">
         
-        <div>
-          <div class="about-eyebrow">03 // TECHNICAL TOOLKIT</div>
-          <h2 class="about-manifesto-title" style="margin-bottom: 1rem;">INTERACTIVE SKILL MATRIX</h2>
-          <p style="font-size: 1.15rem; color: var(--text-light-muted); max-width: 640px;">
-            Hover over any technical domain to inspect capabilities, applied implementations, and related toolsets.
+        <div class="section-header-block">
+          <div class="section-eyebrow">Technical toolkit</div>
+          <h2 class="section-title">Core competencies</h2>
+          <p class="section-subtitle">
+            Select a domain to inspect technical capabilities, applied implementations, and toolchains.
           </p>
         </div>
 
         <div class="skills-interactive-wall">
           
-          <!-- Huge Interactive Skill Wall List -->
+          <!-- Skill Wall List -->
           <div class="skill-huge-list" id="skill-list-container">
             
-            <div class="skill-wall-item active hover-trigger" data-skill="ai">
-              <span>ARTIFICIAL INTELLIGENCE</span>
+            <div class="skill-wall-item active" data-skill="ai">
+              <span>Artificial Intelligence</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
-            <div class="skill-wall-item hover-trigger" data-skill="python">
-              <span>PYTHON AUTOMATION</span>
+            <div class="skill-wall-item" data-skill="python">
+              <span>Python Automation</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
-            <div class="skill-wall-item hover-trigger" data-skill="web">
-              <span>AI-ASSISTED WEB CREATION</span>
+            <div class="skill-wall-item" data-skill="web">
+              <span>Web Architecture</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
-            <div class="skill-wall-item hover-trigger" data-skill="sql">
-              <span>SQL &amp; RELATIONAL DATA</span>
+            <div class="skill-wall-item" data-skill="sql">
+              <span>SQL &amp; Relational Data</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
-            <div class="skill-wall-item hover-trigger" data-skill="context">
-              <span>CONTEXT ENGINEERING</span>
+            <div class="skill-wall-item" data-skill="context">
+              <span>Context Engineering</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
-            <div class="skill-wall-item hover-trigger" data-skill="git">
-              <span>VERSION CONTROL &amp; GIT</span>
+            <div class="skill-wall-item" data-skill="git">
+              <span>Version Control &amp; Git</span>
               <span class="skill-arrow-indicator">→</span>
             </div>
 
           </div>
 
-          <!-- Sticky Detail Inspector Box -->
+          <!-- Detail Inspector Box -->
           <div class="skill-detail-inspector" id="skill-inspector">
-            <div class="inspector-meta-tag" id="inspector-tag">SPECIALIZATION 01 // CORE FOCUS</div>
-            <h3 class="inspector-skill-title" id="inspector-title">ARTIFICIAL INTELLIGENCE</h3>
+            <div class="inspector-meta-tag" id="inspector-tag">Specialization · Core</div>
+            <h3 class="inspector-skill-title" id="inspector-title">Artificial Intelligence</h3>
             <p class="inspector-skill-desc" id="inspector-desc">
-              Harnessing modern Large Language Models, generative tool-calling, autonomous reasoning loops, and prompt chains to construct practical software agents and intelligent workflow augmentations.
+              Utilizing language model APIs, structured function calling, asynchronous agent loops, and prompt chains to construct practical desktop augmentations and workflow utilities.
             </p>
             <div class="inspector-tech-tags-list" id="inspector-tags-list">
               <span class="tech-tag-chip">LLM APIs</span>
@@ -389,166 +321,160 @@
     </section>
 
     <!-- ==========================================================================
-         05 — BLACK PROJECT SHOWCASE (SELECTED WORK)
+         05 — SELECTED PROJECTS
          ========================================================================== -->
-    <section class="projects-black-section" id="projects">
+    <section class="section section-border-top" id="projects">
       <div class="container">
         
-        <div>
-          <div class="about-eyebrow">04 // SELECTED WORK</div>
-          <h2 class="section-title">ENGINEERED WITH INTENT.</h2>
-          <p class="section-subtitle">Real experiments, working systems, and hands-on software development.</p>
+        <div class="section-header-block">
+          <div class="section-eyebrow">Selected work</div>
+          <h2 class="section-title">Selected projects &amp; systems</h2>
+          <p class="section-subtitle">Functional applications, background daemons, and normalized data architectures.</p>
         </div>
 
-        <!-- Project 01: Hero Project - Personal AI Assistant -->
-        <div class="project-feature-card hover-ai-trigger" data-project="assistant">
+        <!-- Project 01: Personal AI Assistant -->
+        <div class="project-feature-card" data-project="assistant">
           <div class="project-copy-container">
-            <div class="project-serial-lbl">01 // FLAGSHIP</div>
+            <div class="project-serial-lbl">Flagship system</div>
             <h3 class="project-card-heading">Autonomous Personal AI Assistant</h3>
             <p class="project-card-desc">
-              Built a custom, voice-interactive personal AI assistant in Python that executes operating system commands, answers queries via integrated LLM models, and automates daily developer routines directly on the desktop.
+              An offline-first voice-driven execution bridge running locally on Python that transcribes speech, routes user intent via local models, and dispatches deterministic operating system actions.
             </p>
             <div class="project-tag-strip">
-              PYTHON // SPEECH RECOGNITION // LLM INTEGRATION // OS AUTOMATION
+              Python 3 · SpeechRecognition · Subprocess Dispatch · Low Latency
             </div>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="#achievement" class="project-action-link-btn hover-trigger">
-                <span>EXPLORE CASE STUDY</span> <span class="btn-arrow">↓</span>
+            <div class="project-btn-cluster">
+              <a href="#achievement" class="btn-subtle">
+                View console
               </a>
-              <button type="button" class="project-action-link-btn hover-btn-trigger" data-project="assistant">
-                <span>TECHNICAL SPECS</span> <span class="btn-arrow">↗</span>
+              <button type="button" class="btn-outline project-action-link-btn" data-project="assistant">
+                Technical specs
               </button>
             </div>
           </div>
 
           <div class="project-card-visual-frame">
             <div class="ui-mock-window">
-              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              <div class="mock-window-dots">
+                <span></span><span></span><span></span>
               </div>
               <pre class="code-terminal-pre">
-<span style="color: #FF5500;">&gt;&gt;&gt;</span> <span style="color: #FFF;">assistant.listen()</span>
-[AUDIO] Captured voice input: <span style="color: #38BDF8;">"Open workspace and check DB status"</span>
-[PARSE] Dispatched command to OS engine
-[STATUS] Workspace launched • DB query executed: 0 latency
-[TTS] <span style="color: #4ADE80;">"Workspace is ready, Sathiyaraj."</span></pre>
+<span class="code-keyword">async def</span> <span class="code-func">event_loop</span>(self):
+    audio_frame = <span class="code-keyword">await</span> self.mic.capture()
+    <span class="code-keyword">if</span> self.mic.detect_speech(audio_frame):
+        query = <span class="code-keyword">await</span> self.transcribe(audio_frame)
+        intent = self.route_intent(query)
+        result = <span class="code-keyword">await</span> self.os_bridge.dispatch(intent)
+        <span class="code-keyword">await</span> self.speak(result.summary)</pre>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
-              AUTONOMOUS LOCAL RUNTIME
+            <div class="mock-window-label">
+              Local async runtime · Python 3.12
             </div>
           </div>
         </div>
 
-        <!-- Project 02: Python Workflow & Task Automations -->
-        <div class="project-feature-card hover-project-trigger" data-project="automation">
+        <!-- Project 02: Python Workflow & Task Daemons -->
+        <div class="project-feature-card" data-project="automation">
           <div class="project-copy-container">
-            <div class="project-serial-lbl">02 // AUTOMATION</div>
+            <div class="project-serial-lbl">Automation daemon</div>
             <h3 class="project-card-heading">Python Workflow &amp; Task Daemons</h3>
             <p class="project-card-desc">
-              A suite of automated background utility scripts engineered to remove repetitive manual labor—including automated filesystem organization, data extraction pipelines, scheduled backup daemons, and system health checks.
+              Automated background services engineered to handle filesystem monitoring, automated batch document transformations, database synchronization, and system health logging.
             </p>
             <div class="project-tag-strip">
-              PYTHON 3 // OS HOOKS // AUTOMATED DAEMONS // BATCH PARSING
+              Python 3 · Watchdog Observers · Background Daemons · Batch Parsing
             </div>
-            <button type="button" class="project-action-link-btn hover-btn-trigger" data-project="automation">
-              <span>INSPECT IMPLEMENTATION</span> <span class="btn-arrow">↗</span>
+            <button type="button" class="btn-outline project-action-link-btn" data-project="automation">
+              Inspect implementation
             </button>
           </div>
 
           <div class="project-card-visual-frame">
             <div class="ui-mock-window">
-              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              <div class="mock-window-dots">
+                <span></span><span></span><span></span>
               </div>
               <pre class="code-terminal-pre">
-<span style="color: #FF5500;">import</span> os, time, schedule
-
-<span style="color: #38BDF8;">def</span> <span style="color: #FFF;">run_sync_daemon</span>():
-    catalog = scan_and_index(<span style="color: #FBBF24;">"/target_dir"</span>)
-    sanitize_records(catalog)
-    trigger_export_vcf(catalog)
-    print(<span style="color: #4ADE80;">"[DAEMON] Sync completed with 0 errors"</span>)</pre>
+<span class="code-keyword">class</span> <span class="code-func">PipelineWatcher</span>(FileSystemEventHandler):
+    <span class="code-keyword">def</span> on_created(self, event):
+        <span class="code-keyword">if</span> event.src_path.endswith((".csv", ".json")):
+            catalog = parse_records(event.src_path)
+            export_payload = normalize_schema(catalog)
+            push_to_warehouse(export_payload)
+            archive_source(event.src_path)</pre>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
-              SYSTEM AUTOMATION PIPELINE
+            <div class="mock-window-label">
+              Multi-threaded event daemon
             </div>
           </div>
         </div>
 
-        <!-- Project 03: AI-Assisted Web Creation Engine -->
-        <div class="project-feature-card hover-project-trigger" data-project="web">
+        <!-- Project 03: Web Architecture Engine -->
+        <div class="project-feature-card" data-project="web">
           <div class="project-copy-container">
-            <div class="project-serial-lbl">03 // FRONTEND &amp; AI</div>
-            <h3 class="project-card-heading">AI-Assisted Web Creation Engine</h3>
+            <div class="project-serial-lbl">Frontend architecture</div>
+            <h3 class="project-card-heading">High-Performance Web Architecture</h3>
             <p class="project-card-desc">
-              Developing modern, high-performance web frontends and micro-tools powered by intelligent component synthesis, semantic structure, responsive CSS layout architectures, and reactive client state management.
+              Clean, dependency-free web frontends structured with semantic HTML5, CSS custom properties, responsive fluid math, and zero layout shift for 100/100 Core Web Vitals.
             </p>
             <div class="project-tag-strip">
-              HTML5 // MODERN CSS3 // JAVASCRIPT // UI ARCHITECTURE
+              HTML5 · Modern CSS3 · Vanilla ES6+ · Responsive Design
             </div>
-            <button type="button" class="project-action-link-btn hover-btn-trigger" data-project="web">
-              <span>VIEW ARCHITECTURE</span> <span class="btn-arrow">↗</span>
+            <button type="button" class="btn-outline project-action-link-btn" data-project="web">
+              View architecture
             </button>
           </div>
 
           <div class="project-card-visual-frame">
             <div class="ui-mock-window">
-              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              <div class="mock-window-dots">
+                <span></span><span></span><span></span>
               </div>
               <pre class="code-terminal-pre">
-<span style="color: #FF5500;">const</span> <span style="color: #FFF;">engine</span> = <span style="color: #38BDF8;">new</span> SemanticSynthesizer({
-  grid: <span style="color: #FBBF24;">'fluid-12-col'</span>,
-  contrast: <span style="color: #FBBF24;">'high-impact'</span>,
-  motion: <span style="color: #FBBF24;">'cubic-bezier(0.16, 1, 0.3, 1)'</span>,
-  perfMetric: <span style="color: #4ADE80;">'100/100 Core Web Vitals'</span>
-});</pre>
+<span class="code-keyword">const</span> metrics = {
+  firstContentfulPaint: <span class="code-string">'0.38s'</span>,
+  cumulativeLayoutShift: <span class="code-string">'0.00'</span>,
+  runtimeBundleSize: <span class="code-string">'14.2 KB gzip'</span>,
+  frameBudget: <span class="code-string">'16.6ms (60 FPS)'</span>
+};</pre>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
-              HIGH-PERFORMANCE INTERFACES
+            <div class="mock-window-label">
+              Zero-dependency client runtime
             </div>
           </div>
         </div>
 
-        <!-- Project 04: SQL Database & Systems Architecture -->
-        <div class="project-feature-card hover-project-trigger" data-project="database">
+        <!-- Project 04: SQL Database Architecture -->
+        <div class="project-feature-card" data-project="database">
           <div class="project-copy-container">
-            <div class="project-serial-lbl">04 // DATA ARCHITECTURE</div>
+            <div class="project-serial-lbl">Relational data</div>
             <h3 class="project-card-heading">SQL Database Systems &amp; Schemas</h3>
             <p class="project-card-desc">
-              Relational database schemas, normalized data models (3NF), complex multi-table joins, and query optimization designed for academic records and real-world transactional systems.
+              Normalized 3NF relational schemas, composite B-tree index structures, transactional integrity guarantees, and optimized multi-table join queries.
             </p>
             <div class="project-tag-strip">
-              RELATIONAL SQL // NORMALIZATION // SCHEMA DESIGN // INDEXING
+              PostgreSQL · 3NF Normalization · Index Optimization · ACID
             </div>
-            <button type="button" class="project-action-link-btn hover-btn-trigger" data-project="database">
-              <span>INSPECT SCHEMA</span> <span class="btn-arrow">↗</span>
+            <button type="button" class="btn-outline project-action-link-btn" data-project="database">
+              Inspect schema
             </button>
           </div>
 
           <div class="project-card-visual-frame">
             <div class="ui-mock-window">
-              <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
-                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              <div class="mock-window-dots">
+                <span></span><span></span><span></span>
               </div>
               <pre class="code-terminal-pre">
-<span style="color: #FF5500;">SELECT</span> e.student_id, e.name, AVG(g.score) <span style="color: #FF5500;">AS</span> avg_gpa
-<span style="color: #FF5500;">FROM</span> students e
-<span style="color: #FF5500;">INNER JOIN</span> grade_records g <span style="color: #FF5500;">ON</span> e.id = g.student_id
-<span style="color: #FF5500;">WHERE</span> g.academic_year = <span style="color: #38BDF8;">2026</span>
-<span style="color: #FF5500;">GROUP BY</span> e.student_id, e.name
-<span style="color: #FF5500;">ORDER BY</span> avg_gpa <span style="color: #FF5500;">DESC</span>;</pre>
+<span class="code-keyword">SELECT</span> s.id, s.full_name, AVG(r.grade_points) <span class="code-keyword">AS</span> gpa
+<span class="code-keyword">FROM</span> students s
+<span class="code-keyword">INNER JOIN</span> academic_records r <span class="code-keyword">ON</span> s.id = r.student_id
+<span class="code-keyword">WHERE</span> r.semester = 4
+<span class="code-keyword">GROUP BY</span> s.id, s.full_name
+<span class="code-keyword">ORDER BY</span> gpa <span class="code-keyword">DESC</span>;</pre>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dark-muted); text-align: right;">
-              NORMALIZED RELATIONAL ENGINE
+            <div class="mock-window-label">
+              Normalized relational engine
             </div>
           </div>
         </div>
@@ -557,52 +483,52 @@
     </section>
 
     <!-- ==========================================================================
-         06 — BLACK ACHIEVEMENT SECTION (PERSONAL AI ASSISTANT HERO)
+         06 — ACHIEVEMENT MILESTONE & CONSOLE
          ========================================================================== -->
-    <section class="achievement-black-section" id="achievement">
+    <section class="section section-border-top" id="achievement">
       <div class="container">
         
-        <div>
-          <div class="about-eyebrow">05 // STANDOUT MILESTONE</div>
-          <h2 class="achievement-huge-heading">
-            I BUILT MY OWN PERSONAL ASSISTANT.
+        <div class="section-header-block">
+          <div class="section-eyebrow">Flagship milestone</div>
+          <h2 class="section-title">
+            Autonomous Personal AI Assistant
           </h2>
-          <p class="achievement-lead-text">
-            Not a simple ChatGPT prompt or generic wrapper. A real, locally running voice-driven assistant built with Python that controls desktop tasks, listens for natural audio commands, and interfaces with LLMs to solve everyday problems.
+          <p class="section-subtitle">
+            An offline-first voice-driven execution bridge running locally on Python that interfaces with local reasoning models to execute OS-level operations.
           </p>
         </div>
 
         <div class="achievement-stage-box">
           
-          <!-- Achievement Highlights & Quote -->
-          <div>
+          <!-- Highlights -->
+          <div class="achievement-text-col">
             <div class="achievement-badges-matrix">
-              <div class="achieve-badge-block">VOICE DRIVEN PIPELINE</div>
-              <div class="achieve-badge-block">DESKTOP AUTOMATION</div>
-              <div class="achieve-badge-block">INTELLIGENT LLM BACKEND</div>
-              <div class="achieve-badge-block">CUSTOM TOOL DISPATCH</div>
+              <div class="achieve-badge-block">Voice-driven pipeline</div>
+              <div class="achieve-badge-block">OS task dispatch</div>
+              <div class="achieve-badge-block">Local model routing</div>
+              <div class="achieve-badge-block">Asynchronous daemons</div>
             </div>
 
-            <p style="font-size: 1.12rem; color: var(--text-dark-secondary); line-height: 1.7; margin-bottom: 2rem;">
-              The project gave me deep, hands-on understanding of real-time audio capture, asynchronous subprocess handling, exception safety in long-running services, and how to harness LLM reasoning to drive deterministic OS actions.
+            <p class="achievement-body-copy">
+              Building this system required implementing real-time audio capture, asynchronous subprocess handling, exception safety in persistent daemons, and deterministic prompt engineering.
             </p>
 
             <div class="achievement-epic-quote">
-              "AI isn't just something I use. It's something I build with."
+              "AI becomes useful when it moves from chat interfaces into deterministic operating system workflows."
             </div>
           </div>
 
-          <!-- Interactive Assistant Console Simulator -->
-          <div class="assistant-console-frame hover-ai-trigger">
+          <!-- Console Simulator -->
+          <div class="assistant-console-frame">
             <div class="console-bar-top">
-              <span>AGENT_PID: 4092 // ACTIVE</span>
-              <span style="color: var(--accent-orange);">ENGINE: PYTHON_CORE</span>
+              <span>daemon_pid: 4092 · active</span>
+              <span class="console-engine-tag">Python 3.12 Core</span>
             </div>
 
             <div class="console-inner-screen">
               
-              <!-- Dynamic Audio Waveform -->
-              <div class="console-speech-wave" id="console-waveform" aria-label="Audio Visualizer">
+              <!-- Audio Waveform -->
+              <div class="console-speech-wave" id="console-waveform" aria-label="Audio visualizer">
                 <span class="active"></span>
                 <span></span>
                 <span class="active"></span>
@@ -617,23 +543,23 @@
               </div>
 
               <!-- Console Output Feed -->
-              <div id="console-logs-feed" style="font-family: var(--font-mono); font-size: 0.8rem; color: #A1A1AA; line-height: 1.7; height: 160px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.4rem; padding-right: 0.5rem;">
-                <div><span style="color: #71717A;">19:42:01</span> [SYSTEM] Audio engine initialized (16,000 Hz, Mono)</div>
-                <div><span style="color: #71717A;">19:42:03</span> [AGENT] Sathiyaraj assistant daemon online. Listening...</div>
-                <div><span style="color: var(--accent-orange);">19:42:08</span> [AUDIO IN] "Sathiyaraj, what projects are in active development?"</div>
-                <div><span style="color: #4ADE80;">19:42:09</span> [AI RESPONSE] "Active builds: Personal Assistant v2.1, Python workflow daemons, and portfolio engine."</div>
+              <div id="console-logs-feed" class="console-feed">
+                <div><span class="log-time">19:42:01</span> [system] Audio engine initialized (16,000 Hz, Mono)</div>
+                <div><span class="log-time">19:42:03</span> [agent] Sathiyaraj assistant daemon listening</div>
+                <div><span class="log-accent">19:42:08</span> [input] "Check system status and active projects"</div>
+                <div><span class="log-success">19:42:09</span> [response] "Core status: optimal. Memory: 42MB. 4 projects active."</div>
               </div>
 
               <!-- Interactive Prompt Buttons -->
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                <button class="assistant-sim-btn hover-trigger" data-cmd="status" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
-                  ▶ "Check System Status"
+              <div class="console-actions-row">
+                <button type="button" class="assistant-sim-btn" data-cmd="status">
+                  Check system status
                 </button>
-                <button class="assistant-sim-btn hover-trigger" data-cmd="skills" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
-                  ▶ "List Sathiyaraj's Stack"
+                <button type="button" class="assistant-sim-btn" data-cmd="skills">
+                  List tech stack
                 </button>
-                <button class="assistant-sim-btn hover-trigger" data-cmd="why" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem; background: var(--bg-dark-surface); border: 1px solid var(--border-dark-subtle); color: #FFF; border-radius: 4px; cursor: pointer;">
-                  ▶ "Why Did You Build This?"
+                <button type="button" class="assistant-sim-btn" data-cmd="why">
+                  Architecture rationale
                 </button>
               </div>
 
@@ -646,63 +572,61 @@
     </section>
 
     <!-- ==========================================================================
-         07 — ORANGE / BLACK CONTACT SECTION (NO FORM, PURE EDITORIAL)
+         07 — CONTACT SECTION
          ========================================================================== -->
-    <section class="contact-dramatic-section" id="contact">
-      <div class="contact-animated-beam" aria-hidden="true"></div>
-
+    <section class="section section-border-top" id="contact">
       <div class="container">
-        <div class="about-eyebrow" style="color: var(--accent-orange);">06 // COLLABORATE &amp; CONNECT</div>
         
-        <h2 class="contact-giant-heading hover-text-trigger">
-          HAVE AN IDEA?<br>
-          <span class="accent">LET'S BUILD IT.</span>
-        </h2>
+        <div class="section-header-block">
+          <div class="section-eyebrow">Contact &amp; collaboration</div>
+          <h2 class="section-title">Start a conversation</h2>
+          <p class="section-subtitle">
+            Whether discussing an internship opportunity, systems automation, or software engineering—my inbox is open.
+          </p>
+        </div>
 
-        <p class="hero-lead-paragraph" style="color: var(--text-dark-secondary); max-width: 640px; margin-bottom: 3rem;">
-          Whether you have an internship opportunity, an AI project in need of a hands-on builder, or want to discuss modern software paradigms—my inbox is open.
-        </p>
+        <div class="contact-cta-wrapper">
+          <a href="mailto:sathiyarajvicky2942006@gmail.com" class="btn-primary contact-main-cta">
+            Send an email
+          </a>
+        </div>
 
-        <a href="mailto:sathiyarajvicky2942006@gmail.com" class="contact-btn-huge btn-magnetic hover-btn-trigger">
-          <span>START A CONVERSATION</span> <span class="btn-arrow">↗</span>
-        </a>
-
-        <!-- Three Clean Interactive Contact Cards -->
+        <!-- Three Contact Cards -->
         <div class="contact-cards-container">
           
           <!-- 01: Email -->
-          <a href="mailto:sathiyarajvicky2942006@gmail.com" class="contact-link-card hover-btn-trigger">
+          <a href="mailto:sathiyarajvicky2942006@gmail.com" class="contact-link-card">
             <div>
-              <span class="contact-card-tag">// 01 DIRECT MAIL</span>
-              <h3 class="contact-card-title">EMAIL</h3>
+              <span class="contact-card-tag">Direct mail</span>
+              <h3 class="contact-card-title">Email</h3>
               <p class="contact-card-value">sathiyarajvicky2942006@gmail.com</p>
             </div>
             <div class="contact-card-action">
-              <span>SEND AN EMAIL</span> <span class="action-arrow">↗</span>
+              <span>Write email →</span>
             </div>
           </a>
 
           <!-- 02: GitHub -->
-          <a href="https://github.com/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="contact-link-card hover-btn-trigger">
+          <a href="https://github.com/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="contact-link-card">
             <div>
-              <span class="contact-card-tag">// 02 SOURCE &amp; REPOSITORIES</span>
-              <h3 class="contact-card-title">GITHUB</h3>
+              <span class="contact-card-tag">Source repositories</span>
+              <h3 class="contact-card-title">GitHub</h3>
               <p class="contact-card-value">github.com/sathiyaraj16</p>
             </div>
             <div class="contact-card-action">
-              <span>EXPLORE BUILDS</span> <span class="action-arrow">↗</span>
+              <span>View repositories →</span>
             </div>
           </a>
 
           <!-- 03: LinkedIn -->
-          <a href="https://linkedin.com/in/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="contact-link-card hover-btn-trigger">
+          <a href="https://linkedin.com/in/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="contact-link-card">
             <div>
-              <span class="contact-card-tag">// 03 PROFESSIONAL NETWORK</span>
-              <h3 class="contact-card-title">LINKEDIN</h3>
+              <span class="contact-card-tag">Professional network</span>
+              <h3 class="contact-card-title">LinkedIn</h3>
               <p class="contact-card-value">linkedin.com/in/sathiyaraj16</p>
             </div>
             <div class="contact-card-action">
-              <span>LET'S CONNECT</span> <span class="action-arrow">↗</span>
+              <span>Connect on LinkedIn →</span>
             </div>
           </a>
 
@@ -714,51 +638,51 @@
   </main>
 
   <!-- ==========================================================================
-       TECHNICAL EDITORIAL FOOTER
+       FOOTER
        ========================================================================== -->
   <footer class="site-technical-footer" id="footer">
     <div class="container footer-content-grid">
       <div class="footer-brand-col">
-        <div class="footer-logo">SATHIYARAJ<span class="orange-period">.</span></div>
+        <div class="footer-logo">Sathiyaraj</div>
         <p class="footer-tagline">
-          Computer Science &amp; Engineering • Roever Engineering College
+          Computer Science &amp; Engineering · Roever Engineering College
         </p>
         <div class="footer-telemetry-badge">
           <span class="telemetry-dot"></span>
-          <span>ALL SYSTEMS OPERATIONAL // 2026</span>
+          <span>Operational · 2026</span>
         </div>
       </div>
 
       <div class="footer-nav-col">
-        <span class="footer-col-heading">NAVIGATION</span>
+        <span class="footer-col-heading">Navigation</span>
         <ul class="footer-links-list">
-          <li><a href="#hero" class="footer-link">01 Home</a></li>
-          <li><a href="#about" class="footer-link">02 About</a></li>
-          <li><a href="#journey" class="footer-link">03 Journey</a></li>
-          <li><a href="#skills" class="footer-link">04 Skills</a></li>
-          <li><a href="#projects" class="footer-link">05 Projects</a></li>
-          <li><a href="#achievement" class="footer-link">06 Achievement</a></li>
-          <li><a href="#contact" class="footer-link">07 Contact</a></li>
+          <li><a href="#hero" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About</a></li>
+          <li><a href="#journey" class="footer-link">Journey</a></li>
+          <li><a href="#skills" class="footer-link">Skills</a></li>
+          <li><a href="#projects" class="footer-link">Projects</a></li>
+          <li><a href="#achievement" class="footer-link">Milestone</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-meta-col">
-        <span class="footer-col-heading">CONNECT &amp; SOURCE</span>
+        <span class="footer-col-heading">Connect</span>
         <div class="footer-social-cluster">
-          <a href="mailto:sathiyarajvicky2942006@gmail.com" class="footer-social-link hover-trigger">Email ↗</a>
-          <a href="https://github.com/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="footer-social-link hover-trigger">GitHub ↗</a>
-          <a href="https://linkedin.com/in/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="footer-social-link hover-trigger">LinkedIn ↗</a>
+          <a href="mailto:sathiyarajvicky2942006@gmail.com" class="footer-social-link">Email</a>
+          <a href="https://github.com/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+          <a href="https://linkedin.com/in/sathiyaraj16" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a>
         </div>
-        <button class="footer-back-to-top btn-magnetic hover-btn-trigger" id="back-to-top-btn" aria-label="Back to top">
-          <span>BACK TO TOP</span> <span class="btn-arrow">↑</span>
+        <button type="button" class="footer-back-to-top" id="back-to-top-btn" aria-label="Back to top">
+          Back to top ↑
         </button>
       </div>
     </div>
 
     <div class="footer-bottom-bar">
       <div class="container footer-bottom-flex">
-        <span>© 2026 Sathiyaraj. Engineered with intent.</span>
-        <span>Built with Semantic HTML5 • Modular CSS3 • Vanilla ES6+</span>
+        <span>© 2026 Sathiyaraj · All rights reserved</span>
+        <span>Built with semantic HTML5, modular CSS, and vanilla JavaScript</span>
       </div>
     </div>
   </footer>
@@ -770,10 +694,10 @@
     <div class="project-modal-card">
       <div class="modal-header-bar">
         <div class="modal-tag-cluster">
-          <span class="modal-status-pill">SYSTEM ARCHITECTURE</span>
-          <span class="modal-project-id" id="modal-project-id">// PROJECT 01</span>
+          <span class="modal-status-pill">System architecture</span>
+          <span class="modal-project-id" id="modal-project-id">Project 01</span>
         </div>
-        <button class="modal-close-trigger hover-trigger" id="modal-close-btn" aria-label="Close modal">✕</button>
+        <button class="modal-close-trigger" id="modal-close-btn" aria-label="Close modal">✕</button>
       </div>
 
       <div class="modal-content-scroller" id="modal-content">
